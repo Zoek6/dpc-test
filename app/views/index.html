@@ -1,88 +1,214 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title -->
+<!-- some custom css padding for the NHS services page -->
+{% set mainClasses = 'nhsuk-u-padding-top-0' %}
+
 {% block pageTitle %}
-  NHS.UK prototype kit
+  Digital Primary Care
 {% endblock %}
 
-<!-- For adding a breadcrumb or back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block beforeContent %}
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
 {% endblock %}
 
-
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-
-      <!-- Change the page title here -->
-      <h1>
-        Digital Primary Care
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <p class="nhsuk-lede-text">
-        This is a test service for Digital Primary Care.
-      </p>
-      <p>
-        This will be a good place to demo and test prototype itertations.
-      </p>
-
-      <hr>
-
-      <h2>
-        About this page
-      </h2>
-
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
-      <hr>
-
-      <h2>
-        Get started
-      </h2>
-
-      <p>Get started by using the:</p>
-
-      <ul>
-        <li>
-          <a href="/docs/how-tos">how to guides</a>
-        </li>
-        <li>
-          <a href="/docs/page-templates">page templates</a>
-        </li>
-        <li>
-          code snippets for styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
-        </li>
-      </ul>
-
-      <!-- End of content -->
-
+<!-- NHS.UK header -->
+{% block header %}
+<header class="nhsuk-header" role="banner">
+  <div class="nhsuk-header__container">
+    <div class="nhsuk-header__logo">
+      <a class="nhsuk-header__link" href="/" aria-label="NHS homepage">      
+        <svg class="nhsuk-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 16" height="40" width="100">
+          <path class="nhsuk-logo__background" fill="#005eb8" d="M0 0h40v16H0z"></path>
+          <path class="nhsuk-logo__text" fill="#fff" d="M3.9 1.5h4.4l2.6 9h.1l1.8-9h3.3l-2.8 13H9l-2.7-9h-.1l-1.8 9H1.1M17.3 1.5h3.6l-1 4.9h4L25 1.5h3.5l-2.7 13h-3.5l1.1-5.6h-4.1l-1.2 5.6h-3.4M37.7 4.4c-.7-.3-1.6-.6-2.9-.6-1.4 0-2.5.2-2.5 1.3 0 1.8 5.1 1.2 5.1 5.1 0 3.6-3.3 4.5-6.4 4.5-1.3 0-2.9-.3-4-.7l.8-2.7c.7.4 2.1.7 3.2.7s2.8-.2 2.8-1.5c0-2.1-5.1-1.3-5.1-5 0-3.4 2.9-4.4 5.8-4.4 1.6 0 3.1.2 4 .6"></path>
+        </svg>
+      </a>
     </div>
   </div>
+  <div class="nhsuk-navigation-container">
+    <nav class="nhsuk-navigation" id="header-navigation" role="navigation" aria-label="Primary navigation">
+      <ul class="nhsuk-header__navigation-list">
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/conditions">
+            Health A-Z
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/live-well/">
+            Live Well
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/mental-health/">
+            Mental health
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/conditions/social-care-and-support/">
+            Care and support
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/pregnancy/">
+            Pregnancy
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item">
+          <a class="nhsuk-header__navigation-link" href="https://www.nhs.uk/nhs-services/">
+            NHS services
+          </a>
+        </li>
+        <li class="nhsuk-header__navigation-item nhsuk-header__navigation-item--home">
+          <a class="nhsuk-header__navigation-link" href="/">
+            Home
+          </a>
+        </li>
+        <li class="nhsuk-mobile-menu-container">
+          <button class="nhsuk-header__menu-toggle nhsuk-header__navigation-link" id="toggle-menu" aria-expanded="false">
+            <span class="nhsuk-u-visually-hidden">Browse</span>
+            More
+            <svg class="nhsuk-icon nhsuk-icon__chevron-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
+            </svg>
+          </button>
+          <ul class="nhsuk-header__drop-down nhsuk-header__drop-down--hidden"></ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<!-- Breadcrumbs -->
+<nav class="nhsuk-breadcrumb beta-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a href="" class="nhsuk-breadcrumb__link">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a href="" class="nhsuk-breadcrumb__backlink">
+        <span class="nhsuk-u-visually-hidden">Back to </span>Home
+      </a>
+    </p>
+  </div>
+</nav>
+{% endblock %}
+
+
+<!-- NHS services content -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Heading -->
+    <div class="nhsuk-u-reading-width">
+      <h1>NHS services</h1>
+    </div>
+
+    <article>
+      <h2 class="nhsuk-u-visually-hidden">Top tasks in NHS services</h2>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-padding-top-0">
+
+        <!-- Book a coronavirus vaccination if you're eligible -->
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable ">
+            <div class="nhsuk-card__content">
+              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
+                Buying Catalogue
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Get tested for coronavirus -->
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable ">
+            <div class="nhsuk-card__content">
+              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
+                DSIC playbook
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Use the NHS website repeat prescription ordering service -->
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable ">
+            <div class="nhsuk-card__content">
+              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
+                Test service
+              </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+<!-- NHS.UK footer -->
+{% block footer %}
+<footer role="contentinfo">
+  <div class="nhsuk-footer-container">
+    <div class="nhsuk-width-container">
+      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+      <div class="nhsuk-footer">
+        <ul class="nhsuk-footer__list">
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">NHS sites</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">NHS App</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">About us</a>
+          </li>
+        </ul>
+        <ul class="nhsuk-footer__list">
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="#">Contact us</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">Profile editor login</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">Site map</a>
+          </li>
+        </ul>
+        <ul class="nhsuk-footer__list nhsuk-footer__meta">
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">Accessibility statement</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">Our policies</a>
+          </li>
+          <li class="nhsuk-footer__list-item">
+            <a class="nhsuk-footer__list-item-link" href="">Cookies</a>
+          </li>
+        </ul>
+      </div> 
+      <div>
+        <p class="nhsuk-footer__copyright">© NHS England</p>
+      </div>
+    </div> 
+  </div> 
+</footer>
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+  $( document ).ready(function() {
+    $('a[href=""], button.nhsuk-search__submit').click(function(e) {
+      e.preventDefault();
+    });
+  });
+</script>
 {% endblock %}
