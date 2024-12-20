@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  DCS playbook - Our process
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/playbook/index",
+        text: "Introduction"
+      }
+    ],
+    href: "#",
+    text: "Our process"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        DCS Catalogue Playbook
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom ">
+          Our process
+        </span>
+      </h1>
+
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/playbook/index",
+            text: "Introduction"
+          },
+          {
+            href: "/playbook/page-2",
+            text: "Our process",
+            current: "true"
+          },
+          {
+            href: "/playbook/page-3",
+            text: "What is a catalogue agreement?"
+          },
+          {
+            href: "/playbook/page-4",
+            text: "What are capabilities and standards?"
+          }
+        ]
+      }) }}
+      <h3>Procurement contact</h3>
+      <p>The DCS Catalogue or device is a Condition Precedent, placed in a procurement contract (either FW or Call Off / base contract) requiring the Supplier to be a signatory to the 
+        Catalogue Agreement and Compliant under its terms, and the Catalogue Agreement itself.</p>
+      <p>The Catalogue Agreement is an evergreen relational contract, there are no paid transactions occurring within it. The terms are therefore applied to all 
+        signatories, continuously, without any requirement for payment from any party; which includes the placement, application and assurance of Standards development 
+        under the Roadmap. Framework Authorities consider the nature of their markets, the level of future Standards development and the priority of that work and 
+        have discretion regarding any supplementary payments for Standards work.</p>
+        
+        <h3>Capabilities and Standards</h3> 
+        <P>The DCS sets out a Capabilities and User Stories library, which is linked to a set of Catalogue Solution Standards. Suppliers submit their Catalogue 
+        Solutions against these Capabilities and User Stories, submitting video evidence, and are then assured against the Standards that are required by the
+        Capabilities and User Stories accepted. Once fully assured, the Supplier creates a Catalogue Solution Listing and is considered Catalogue Compliant.</P> 
+        
+        <p>NHS Digital facilitates the ongoing publication of a Roadmap which describes changes to the Capabilities and User Stories library, specifically the addition 
+        of Standards or new versions of Standards. Typically a Roadmap is managed at domain level (for instance Primary Care is a domain, Adult Social Care is a domain) 
+        because domains tend to have different commissioning structures, different digital maturity, different funding and policy focus; however this is not necessarily 
+        fixed and reflects internal customer governance.</p>
+        
+        <h2>Frameworks</h2>
+        <p>Frameworks and other procurement products (e.g. DPS) can apply for access to the Catalogue (this essentially means installation of the Condition Precedent by 
+        agreement with NHS Digital). There are currently at least 5 Frameworks and DPS attached to the Catalogue and there is no real upper limit to the numbers that 
+        can be supported.</p>
+        <P>Some Frameworks are also placed on the Buying Catalogue which has a set of Marketing Pages, a comparison tool and an Order and Contract builder which is 
+        integrated with the NHS Digital Finance department and supports central invoicing.</P>
+
+
+
+      {{ pagination({
+        "previousUrl": "/playbook/index",
+        "previousPage": "Introduction",
+        "nextUrl": "/playbook/page-3",
+        "nextPage": "Catalogue agreement"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

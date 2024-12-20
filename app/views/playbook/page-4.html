@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+DCS playbook - Capabilities and standards
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/playbook/index",
+        text: "Introduction"
+      }
+    ],
+    href: "#",
+    text: "Capabilities and standards"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        DCS PLaybook
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom ">
+          What are capability and standards?
+        </span>
+      </h1>
+
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/playbook/index",
+            text: "Introduction"
+          },
+          {
+            href: "/playbook/page-2",
+            text: "Our process"
+          },
+          {
+            href: "/playbook/page-3",
+            text: "What is a catalogue agreement?"
+          },
+          {
+            href: "/playbook/page-4",
+            text: "What are capabilities and standards?",
+            current: "true"
+          }
+        ]
+      }) }}
+
+      <p>In order to be able to operate the Catalogue Agreement we required a stable & sustainable, flexible & extensible requirements model, one which contained identifiable, 
+        enforceable and testable Standards to be subject to the Roadmap and Compliance regime, and one which contained binary testable user stories describing functional 
+        system scope. </p>
+
+       <p>We also needed a descriptive model which did not presuppose system boundaries and scope, unlike standard output based requirements, because in our analysis these
+         older forms of requirement articulation block innovation and orientates system development towards procurement demands and away from user needs (rather than 
+         describing the presumed system features and delineation from the analysts we needed a model that could describe ANY system in the same terms).</p>  
+        
+       <p>We have therefore constructed an Enterprise Architecture ‘map’ of Capabilities, into which User Stories are written, within the body of these User Stories are 
+        references and links to Standards, which are to be applied to those systems.  We maintain a strict articulation style (Behaviour Driven Development language) 
+        a formal meta model and use a standard format and style guide.</p>
+        
+      <p>Each domain maintains its own view of the Capabilities which are relevant to it, but multiple domains may use the same Capability if it describes a set of 
+        business activities undertaken in that context.</p>
+
+      <p>User Stories are ‘flat’; they are collected in a non-relational manner within the Capability which means that they can be added at any time, and there is a 
+        process for continuously adding to and maintaining to the library, including through supplier submission.</p>
+        <p>The Capability and User Story library can be interrogated by buyers, who can use it to quickly filter and identify groups of stories which meet their business 
+          requirement (for example; filter by business service - show me all stories relating to Maternity Services: filter by one or more Capabilities - show me all stories
+           related to Prescribing and Referrals). The meta model also drives the comparison and filter tools on the Buying Catalogue, where buyers can look for products with specific Capabilities and User Stories.</p>
+        <p>The Capability and User Story library can be interrogated by buyers, who can use it to quickly filter and identify groups of stories which meet their business requirement (for example; filter by business 
+            service - show me all stories relating to Maternity Services: filter by one or more Capabilities - show me all stories related to Prescribing and Referrals). The meta model also drives the comparison and 
+            filter tools on the Buying Catalogue, where buyers can look for products with specific Capabilities and User Stories.</p>
+
+      <h3>Useful guides</h3>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><a href="https://nhse-dsic.atlassian.net/wiki/spaces/GPITF/pages/1391134310/Introduction+to+Capabilities+and+Standards">An introduction for suppliers using the DSIC model</a></li>
+          <li><a href="https://nhse-dsic.atlassian.net/wiki/spaces/GPITF/pages/1391135385/Interactive+Capability+and+Standards+Map">Capabilities and Standards map</a></li>
+          <li><a href="#">Requirements meta model</a></li>
+        </ul>
+      
+     
+
+      {{ pagination({
+        "previousUrl": "/playbook/page-3",
+        "previousPage": "Catalogue agreement"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

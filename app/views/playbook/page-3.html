@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+DCS playbook - Catalogue agreement
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/playbook/index",
+        text: "Introduction"
+      }
+    ],
+    href: "#",
+    text: "Catalogue agreement"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        DCS Playbook
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom ">
+         What is a catalogue agreement?
+        </span>
+      </h1>
+
+
+      {{ contentsList({
+        items: [
+          {
+            href: "/playbook/index",
+            text: "Introduction"
+          },
+          {
+            href: "/playbook/page-2",
+            text: "Our process"
+          },
+          {
+            href: "/playbook/page-3",
+            text: "What is a catalogue agreement?",            
+            current: "true"
+          },
+          {
+            href: "/playbook/page-4",
+            text: "What are capabilities and standards?"
+          }
+        ]
+      }) }}
+
+      <p>The Catalogue Agreement is an evergreen contract (it has no expiry) between the Catalogue Authority (NHS Digital) and a Catalogue Solution Supplier. 
+        There is only one version of the Catalogue Agreement, updated via a Common Change Control process, no bespoke versions of it are accepted.</p>
+
+       <p>The Catalogue Agreement provides for the submission of Catalogue Solutions through an OnBoarding process, which includes functional assessment 
+        (Capability mapping and Capability Assessment), assurance against relevant Standards and the creation of a Catalogue Solution Listing (comprehensive solution 
+        data set inc. List Price information). At the end of this process the Catalogue Solution has achieved Compliant Status.</p>  
+        
+       <p>Compliant Status is required for participation in contracts, and the Standards applied therefore become the baseline specification for health and social care 
+        systems within the domain.</p>
+        
+      <p>Within the Catalogue Agreement, a Roadmap is published which describes the application of new Standards and lifecycle development of existing ones. 
+        Suppliers are obliged to continue to meet the criteria for compliance, including where new Standards are introduced for their Catalogue Solutions via 
+        the Roadmap.</p>
+
+      <p>The Catalogue Agreement encompasses everything necessary to enable the Roadmap to operate effectively, including constraints/rules regarding the Roadmap, 
+      community governance, dispute resolution, contract governance. It is an extensive contract but is generally considered by suppliers to be very reasonable 
+      (it is deliberately even handed in order to secure consent to impose the Roadmap).</p>
+
+      <P>In the universe of the Catalogue Agreement, anything is a Standard by dint of being named as such within the Roadmap and the reverse is true, that nothing 
+        can be considered to be a Standard under the Catalogue Agreement unless it has been published as such through the Roadmap. However we have adopted a pattern 
+        which aligns to Standards & Standards bodies in the wider system.  Specifically this comprises: </P>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>a set of over arching product Standards which align to (but exceed)  the Digital Technology Assessment Criteria (DTAC).</li>
+          <li>Data and Information Standards. These are generally derived from an ISN, and include things like SNOMED for Primary Care or the About Me Standard for Adult Social Care.</li>
+          <li>Interoperability Standards. These are either national service integrations (e.g. PDS, ERS, EPS, Pathology messaging) or specifications for general interop services (e.g. IM1, GP Connect). 
+              These utilise a range of published NHS Digital Standards as well some ISNss</li>
+          <li>Market specific Standards for example the Commercial Standard or Data Migration Standard which are vital control mechanisms designed to offset difficulties in the current environment.
+            These are created wholly from within the Catalogue.</li>
+        </ul>
+
+        <P>Where a supplier falls into Non-compliance then a series of remedial actions are triggered which are designed to bring them back into Compliance, however if the breach is serious enough or is not 
+          remedied appropriately then the Catalogue Authority terminates the Catalogue Agreement with that Supplier and all of their associated procurement contracts related to that Catalogue 
+          Solution are invalidated as a result.</P>
+      
+     
+
+
+      {{ pagination({
+        "previousUrl": "/playbook/page-2",
+        "previousPage": "Our process",
+        "nextUrl": "/playbook/page-4",
+        "nextPage": "Capabilities and standards"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

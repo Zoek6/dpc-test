@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+DCS Catalogue Playbook
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        DCS Catalogue Playbook
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom ">
+          What is the DCS Catalogue?
+        </span>
+      </h1>
+
+      {{ contentsList({
+        items: [
+          {
+            href: "playbook",
+            text: "Introduction",
+            current: "true"
+          },
+          {
+            href: "/playbook/page-2",
+            text: "Our process"
+          },
+          {
+            href: "/playbook/page-3",
+            text: "What is a catalogue agreement?"
+          },
+          {
+            href: "/playbook/page-4",
+            text: "What are capabilities and standards?"
+          }
+        ]
+      }) }}
+      <h3>Introduction</h3>
+      <p>The DCS Catalogue is a ‘device’ designed to give ‘the Centre’ (in the current form of NHS Digital) a contract with providers of digital services 
+        into health and social care. Through this contract we impose Standards, assure solutions against these standards and manage a technical Standards Roadmap, 
+        proactively managing quality and supply to customer markets and supporting system level market, interoperability and data strategy.</p>
+
+      {{ pagination({
+        "nextUrl": "/playbook/page-2",
+        "nextPage": "Our process"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
